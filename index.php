@@ -9,10 +9,7 @@ if (isset($_GET["RunFile"])) {
 
     $razorpay_txn =  Conn()->ExecuteQuery("SELECT `id`,`status`,`razorpay_payment_id`,`invoice_id` FROM `razorpay_txn` WHERE `status` = 2")->fetchAll();
 
-    // echo "<pre>";
-    // print_r($razorpay_txn);
-    // echo "<pre>";
-    // exit;
+  
 
     $api = new Api($company_details2['razorpayKeyId'], $company_details2['razorpayKeySecret']);
     $api_key = $company_details2['razorpayKeyId'];
